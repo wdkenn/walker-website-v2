@@ -1,1 +1,32 @@
-@import "../../../styles/base.scss"
+@import "../../../styles/base.scss";
+
+.section--about, .section--experience, .section--music {
+  margin-top: 80px;
+}
+
+.section--about__body, .section--experience__body, .section--music__body {
+  font-size: 25px;
+  font-family: Montserrat, helvetica,arial,sans-serif;
+}
+
+.section--about__body p, .section--experience__body p, .section--music__body p {
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.section--about__header, .section--experience__header, .section--music__header {
+  font-size: 30px;
+  letter-spacing: -1px;
+  line-height: .9;
+  font-family: Montserrat, helvetica,arial,sans-serif;
+}
+
+#section--image {
+  text-align: center;
+}
+
+#section--image img {
+  margin-top: 50px;
+  width: 100%;
+  height: auto;
+}

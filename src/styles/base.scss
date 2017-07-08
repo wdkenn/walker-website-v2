@@ -1,5 +1,4 @@
-// $main-bg-color: #919890;
-@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500');
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -46,9 +45,13 @@ header {
   font-size: 20px;
   margin-right: 10px;
   font-family: Montserrat, helvetica,arial,sans-serif;
+}
+
+a {
   color: black;
 }
 
-.page_header__link:hover {
+a:hover {
   color: rgb(0, 107, 178);
+  transition: color 0.4s ease;
 }
