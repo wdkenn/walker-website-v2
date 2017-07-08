@@ -1,12 +1,54 @@
-$main-bg-color: #919890;
-.app-wrapper {
-    width: 1024px;
-    height: 768px;
-    background: $main-bg-color;
+// $main-bg-color: #919890;
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-top: 60px;
 }
-.header {
-    height: 8%;
-    background: #323232;
-    width: 100%;
-    border-bottom: 2px solid #919890;
+
+article {
+  margin: 60px;
+  display: block;
+  @media screen and (max-width: 500px) {
+    width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+header {
+  position: relative;
+}
+
+.page-header__heading p {
+  margin-bottom: 0px;
+  font-size: 55px;
+  letter-spacing: -1px;
+  line-height: .9;
+  text-transform: uppercase;
+  font-family: Montserrat, helvetica,arial,sans-serif;
+}
+
+.page-header__nav {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  @media screen and (max-width: 900px) {
+    position: relative;
+    margin-top: 0px;
+  }
+}
+
+.page_header__link {
+  font-size: 20px;
+  margin-right: 10px;
+  font-family: Montserrat, helvetica,arial,sans-serif;
+  color: black;
+}
+
+.page_header__link:hover {
+  color: rgb(0, 107, 178);
 }
