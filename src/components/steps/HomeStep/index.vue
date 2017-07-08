@@ -7,8 +7,8 @@
             <p>Walker Kennedy</p>
           </h1>
           <nav class="page-header__nav" role="navigation">
-            <router-link class="page_header__link" to="static/WalkerKennedy.pdf">contact</router-link>
-            <router-link class="page_header__link" to="static/WalkerKennedy.pdf">resumé</router-link>
+            <a class="page_header__link" href="#" v-scroll-to="'#contact'">contact</a>
+            <a class="page_header__link" href="static/WalkerKennedy.pdf">resumé</a>
           </nav>
         </header>
         <section class="section--about">
@@ -36,6 +36,14 @@
         </section>
         <section id="section--image">
           <img src="../../../assets/HipsterWalker.png" alt="Walker sits on a couch holding several vinyl record sleeves. The wall behind him is covered in vinyl records.">
+        </section>
+        <section id="contact" class="section--contact">
+          <h3 class="section--contact__header">contact</h3>
+          <div class="section--contact__links">
+            <a class="section--contact__link" href="mailto:walker@walker-kennedy.com">email</a>
+            <a class="section--contact__link" href="https://github.com/wdkenn">github</a>
+            <a class="section--contact__link" href="https://www.linkedin.com/in/walkerkennedy/">linkedin</a>
+          </div>
         </section>
       </article>
     </div>
