@@ -3,7 +3,8 @@
 .section--about,
 .section--experience,
 .section--music,
-.section--contact {
+.section--contact,
+.section--credit {
   margin-top: 80px;
 }
 
@@ -24,7 +25,8 @@
 .section--about__header,
 .section--experience__header,
 .section--music__header,
-.section--contact {
+.section--contact__header,
+.section--credit__header {
   font-size: 30px;
   letter-spacing: -1px;
   line-height: .9;
@@ -39,6 +41,10 @@
   margin-top: 50px;
   width: 100%;
   height: auto;
+}
+
+.section--credit__link {
+  font-size: 20px;
 }
 
 .section--contact__link {

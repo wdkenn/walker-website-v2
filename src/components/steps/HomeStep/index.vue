@@ -45,6 +45,13 @@
             <a class="section--contact__link" href="https://www.linkedin.com/in/walkerkennedy/">linkedin</a>
           </div>
         </section>
+        <section class="section--credit">
+          <h3 class="section--credit__header">credit</h3>
+          <div class="section--credit__links">
+            <p class="section--credit__link">photo: <a href="http://www.saraheckinger.com/">Sarah Eckinger</a></p>
+            <p class="section--credit__link">vue-scrollTo: <a href="https://www.npmjs.com/package/vue-scrollto">npmjs.com/package/vue-scrollto</a></p>
+          </div>
+        </section>
       </article>
     </div>
   </main>
