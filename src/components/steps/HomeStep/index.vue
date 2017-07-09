@@ -36,6 +36,9 @@
         </section>
         <section id="section--image">
           <img src="../../../assets/HipsterWalker.png" alt="Walker sits on a couch holding several vinyl record sleeves. The wall behind him is covered in vinyl records.">
+          <div class="section--image__body">
+            <p class="section--image__credit">photo: <a href="http://www.saraheckinger.com/">Sarah Eckinger</a></p>
+          </div>
         </section>
         <section id="contact" class="section--contact">
           <h3 class="section--contact__header">contact</h3>
@@ -59,7 +62,7 @@ export default {
   computed: {
     listeningToText () {
       if (this.recentSong && this.recentArtist) {
-        return 'Recently I listened to "' + this.recentSong + '" by ' + this.recentArtist + '.'
+        return 'I\'m listening  to "' + this.recentSong + '" by ' + this.recentArtist + '.'
       } else if (this.isLoading) {
         return 'Let me think...'
       } else {

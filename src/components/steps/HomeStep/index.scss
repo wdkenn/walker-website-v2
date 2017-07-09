@@ -32,12 +32,24 @@
   font-family: Montserrat, helvetica,arial,sans-serif;
 }
 
+.section--image__body {
+  right: 0;
+  position: absolute;
+  margin: 0;
+}
+
+.section--image__body p {
+  line-height: 0;
+}
+
 #section--image {
+  position: relative;
   text-align: center;
 }
 
 #section--image img {
-  margin-top: 50px;
+  display: block;
+  margin-top: 80px;
   width: 100%;
   height: auto;
 }
