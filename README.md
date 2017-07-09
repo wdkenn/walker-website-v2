@@ -1,6 +1,6 @@
 # walker-website-v2
 
-> A Vue.js project
+> My personal website written in Vue JS.
 
 ## Build Setup
 
