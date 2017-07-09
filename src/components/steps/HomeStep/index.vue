@@ -61,10 +61,10 @@ export default {
   name: 'home',
   computed: {
     listeningToText () {
-      if (this.recentSong && this.recentArtist) {
-        return 'I\'m listening  to "' + this.recentSong + '" by ' + this.recentArtist + '.'
-      } else if (this.isLoading) {
+      if (this.isLoading) {
         return 'Let me think...'
+      } else if (this.recentSong && this.recentArtist) {
+        return 'I\'m listening to "' + this.recentSong + '" by ' + this.recentArtist + '.'
       } else {
         return 'Oops, I\'m having trouble finding my recent listens.'
       }
