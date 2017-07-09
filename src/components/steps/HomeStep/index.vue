@@ -23,15 +23,15 @@
         <section class="section--experience">
           <h3 class="section--experience__header">what's my experience?</h3>
           <div class="section--experience__body">
-            <p>At <a href="http://www.bowdoin.edu/">Bowdoin College</a>, I focused on building software to <a href="http://community.bowdoin.edu/news/2013/08/walker-kennedy-15-creates-hi-tech-tool-to-teach-traditional-afro-latin-music/">teach music</a> and <a href="https://youtu.be/M-ixth688vI">make music</a>.</p>
-            <p>I developed iOS and Android apps at <a href="https://runkeeper.com/">runkeeper</a>.</p>
             <p>Currently, I'm a product engineer at <a href="https://www.pillpack.com/">PillPack</a>.</p>
+            <p>I developed iOS and Android apps at <a href="https://runkeeper.com/">runkeeper</a>.</p>
+            <p>At <a href="http://www.bowdoin.edu/">Bowdoin College</a>, I focused on building software to <a href="http://community.bowdoin.edu/news/2013/08/walker-kennedy-15-creates-hi-tech-tool-to-teach-traditional-afro-latin-music/">teach music</a> and <a href="https://youtu.be/M-ixth688vI">make music</a>.</p>
           </div>
         </section>
         <section class="section--music">
           <h3 class="section--music__header">what am i listening to?</h3>
           <div class="section--music__body">
-            <p>Recently I listened to </p>
+            <p>{{ listeningToText }}</p>
           </div>
         </section>
         <section id="section--image">
@@ -45,24 +45,58 @@
             <a class="section--contact__link" href="https://www.linkedin.com/in/walkerkennedy/">linkedin</a>
           </div>
         </section>
-        <section class="section--credit">
-          <h3 class="section--credit__header">credit</h3>
-          <div class="section--credit__links">
-            <p class="section--credit__link">photo: <a href="http://www.saraheckinger.com/">Sarah Eckinger</a></p>
-            <p class="section--credit__link">vue-scrollTo: <a href="https://www.npmjs.com/package/vue-scrollto">npmjs.com/package/vue-scrollto</a></p>
-          </div>
-        </section>
       </article>
     </div>
   </main>
 </template>
 
 <script>
+import LastFmAPI from '@/datasources/last_fm_data_source'
+import { get } from 'lodash'
+
 export default {
   name: 'home',
+  computed: {
+    listeningToText () {
+      if (this.recentSong && this.recentArtist) {
+        return 'Recently I listened to "' + this.recentSong + '" by ' + this.recentArtist + '.'
+      } else if (this.isLoading) {
+        return 'Let me think...'
+      } else {
+        return 'Oops, I\'m having trouble finding my recent listens.'
+      }
+    }
+  },
   data () {
     return {
-      msg: 'i love panda'
+      recentSong: '',
+      recentArtist: '',
+      isLoading: true
+    }
+  },
+  mounted () {
+    this.updateRecentTrack()
+  },
+  methods: {
+    updateRecentTrack () {
+      LastFmAPI.myRecentTrack()
+      .then(this.handleRecentTrackResponse)
+      .catch(this.handleAPIError)
+    },
+    handleRecentTrackResponse (response) {
+      this.isLoading = false
+      if (Array.isArray(response) && response.length) {
+        const track = response[0]
+        if (get(track, 'artist[#text]') && get(track, 'name')) {
+          this.recentArtist = track.artist['#text']
+          this.recentSong = track.name
+        }
+      }
+    },
+    handleAPIError () {
+      this.isLoading = false
+      this.recentArtist = ''
+      this.recentSong = ''
     }
   }
 }
